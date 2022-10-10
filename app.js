@@ -1,33 +1,12 @@
-// let num = 100;
+const n1 = document.querySelector(".min"),
+  n2 = document.querySelector(".max"),
+  btn = document.querySelector("button"),
+  display = document.querySelector(".output");
 
-// function getRandomInt(num) {
-//   return Math.floor(Math.random() * num);
-// }
-// alert(getRandomInt(100)); \
+btn.addEventListener("click", () => {
+  display.innerHTML = Math.floor(getRandom(n1.value, n2.value));
+});
 
-// let first = parseInt(document.querySelector('.first').value)
-// let second = parseInt( document.querySelector('.second').value)
-
-
-// function getRandomNumberBetween(first,second){
-//   return Math.floor(Math.random()*(first-second+1)+second);
-
-
-// }
-
-
-// function alertRes() {
-//   console.log(getRandomNumberBetween(first,second));
-// }
-
-function rand()
-{
-    let max = document.getElementById("max").value;
-    let min = document.getElementById("min").value;
-
-    let output = document.getElementById("output");
-
-    let random = Math.floor(Math.random() * max + min);
-
-    output.value = random;
+function getRandom(min, max) {
+  return Math.random() * (max - min) + min;
 }
